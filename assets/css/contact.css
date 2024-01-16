@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Wallpoet&display=swap");
+
+.title {
+  font-family: "Wallpoet", cursive;
+}
+.container {
+  font-size: 1.2em;
+  margin: 30px;
+  width: 100%;
+  max-width: 900px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#desc {
+  font-size: 1em;
+}
+.ceo-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #a30461;
+  border-radius: 20px 20px 0 0;
+  padding: 55px 0;
+  width: 100%;
+  margin: auto;
+}
+.ceo-pic {
+  max-width: 180px;
+  position: relative;
+  left: 0;
+  margin: 40px 0;
+  filter: drop-shadow(-6px 40px 23px rgba(0, 0, 0, 0.5));
+}
+.ceo-details {
+  padding: 40px;
+  background-color: rgba(225, 225, 225, 0.1);
+  border-radius: 0 0 20px 20px;
+}
+.ceo-details .title {
+  text-transform: uppercase;
+  margin: 0;
+}
+.ceo-details header {
+  margin-bottom: 50px;
+  position: relative;
+}
+.ceo-details article > h5 {
+  margin: 0;
+}
+.ceo-details article > p {
+  color: #bbb;
+  margin: 0.5em 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+@media (min-width: 37.5em) {
+  .ceo-details .rate {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    margin-top: 0;
+  }
+  .ceo-details .controls > div.qty {
+    width: 60px;
+  }
+  .ceo-details .controls > div + div {
+    border-left: 2px solid rgba(187, 187, 187, 0.5);
+    padding-left: 25px;
+    padding-right: 25px;
+    width: 100px;
+    margin-top: 0;
+  }
+  .ceo-details .controls {
+    display: flex;
+  }
+}
+@media (min-width: 56.25em) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: normal;
+    margin: auto;
+  }
+
+  .ceo-image {
+    border-radius: 20px 0 0 20px;
+    max-width: 330px;
+  }
+
+  .ceo-pic {
+    left: -40px;
+    max-width: 330px;
+  }
+
+  .ceo-details {
+    width: 100%;
+    border-radius: 0 20px 20px 0;
+  }
+}

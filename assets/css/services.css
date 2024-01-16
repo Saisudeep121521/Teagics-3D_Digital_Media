@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Wallpoet&display=swap");
+
+:root {
+  --spacing-medium: 27px;
+  --box-height: var(--spacing-medium) * 16;
+  --box-width: var(--spacing-medium) * 24;
+  --figure-width: var(--box-width) * 2;
+  --grid-gap: calc(var(--spacing-medium) * 0.75);
+  --ease-time: 0.6s;
+  --caption-text-color: #e8e8e8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Itim", cursive;
+  font-size: 14.5px;
+  line-height: 1.25em;
+  background-color: #16000e;
+  color: #fff;
+}
+
+h2 {
+  font-family: "Wallpoet", cursive;
+}
+
+article {
+  margin: var(--spacing-medium) 0;
+  display: grid;
+  grid: auto/auto;
+  grid-row-gap: var(--grid-gap);
+  justify-content: center;
+}
+
+figure {
+  position: relative;
+  margin: 0;
+  margin: 0px !important;
+  height: calc(var(--box-height));
+  width: 100%;
+  transition: all var(--ease-time) ease;
+}
+figure img {
+  position: absolute;
+  right: 0;
+  display: block;
+  height: 100%;
+  width: calc(var(--box-width));
+  max-width: 100%;
+  -o-object-fit: fill;
+  object-fit: fill;
+  -webkit-clip-path: polygon(
+    100% 0,
+    100% 100%,
+    var(--spacing-medium) 100%,
+    0 calc(100% - var(--spacing-medium)),
+    0 var(--spacing-medium),
+    var(--spacing-medium) 0
+  );
+  clip-path: polygon(
+    100% 0,
+    100% 100%,
+    var(--spacing-medium) 100%,
+    0 calc(100% - var(--spacing-medium)),
+    0 var(--spacing-medium),
+    var(--spacing-medium) 0
+  );
+  transition: all var(--ease-time) ease;
+}
+figure:nth-child(2n) img {
+  left: 0;
+  right: auto;
+  -webkit-clip-path: polygon(
+    calc(100% - var(--spacing-medium)) 0,
+    100% var(--spacing-medium),
+    100% calc(100% - var(--spacing-medium)),
+    calc(100% - var(--spacing-medium)) 100%,
+    0 100%,
+    0 0
+  );
+  clip-path: polygon(
+    calc(100% - var(--spacing-medium)) 0,
+    100% var(--spacing-medium),
+    100% calc(100% - var(--spacing-medium)),
+    calc(100% - var(--spacing-medium)) 100%,
+    0 100%,
+    0 0
+  );
+}
+figure:nth-child(2n) figcaption {
+  right: 0;
+  left: auto;
+}
+
+figcaption {
+  position: absolute;
+  bottom: var(--spacing-medium);
+  left: 0;
+  padding: var(--spacing-medium);
+  background-color: var(--caption-bg-color);
+  width: calc(var(--box-width));
+  transition: all var(--ease-time) ease;
+}
+figcaption h4,
+figcaption p {
+  margin: 0 0 0.2rem 0;
+  letter-spacing: 0.6px;
+  color: var(--caption-text-color);
+}
+figcaption h4 {
+  font-size: 1.2em;
+}
+
+@media (max-width: 1300px) {
+  :root {
+    --box-height: var(--spacing-medium) * 12;
+    --box-width: var(--spacing-medium) * 18;
+  }
+}
+@media (max-width: 900px) {
+  :root {
+    --figure-width: var(--box-width);
+    --grid-gap: var(--spacing-medium);
+  }
+
+  figure {
+    max-width: 90vw;
+  }
+
+  figcaption {
+    max-width: 100%;
+  }
+}
